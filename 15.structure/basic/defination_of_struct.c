@@ -6,7 +6,7 @@ struct {
     char *engine;       //structure declaration 
 }car1,car2;
 
-//this ^ structure is decleared in global scope
+//this above structure is decleared in global scope
 
 int main()
 {
