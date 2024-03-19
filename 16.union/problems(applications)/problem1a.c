@@ -1,5 +1,7 @@
-//this program is to understand the usage of union
+//this program is to understand the usage of union (application of union)
 
+/*by the use of this application of union, we can store the different properties of different
+ items into one block of container*/
 #include <stdio.h>
 
 #pragma pack(1)
@@ -33,7 +35,7 @@ int main()
     s.item.book.num_pages = 197;
     
     printf("%s\n", s.item.book.title);
-    printf("%ld\n", sizeof(s));     //size of a is 28 bytes
+    printf("%ld\n", sizeof(s));     //size of s is 28 bytes
 
     return 0;
 }

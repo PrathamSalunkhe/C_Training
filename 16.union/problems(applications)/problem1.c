@@ -14,6 +14,10 @@ struct store
     char *design;
 };
 
+    /*in this program size of the structure is much large
+        and we couldn't store the information of two items*/
+
+    //to overcome from this problem, we should use union
 int main()
 {
     struct store book;
@@ -24,9 +28,4 @@ int main()
 
     printf("%ld\n", sizeof(book));
     return 0;
-
-    /*in this program size of the structure is much large
-        and we couldn't store the information of two items*/
-
-    //to overcome from this problem, we should use union
 }
