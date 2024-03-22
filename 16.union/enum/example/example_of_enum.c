@@ -2,9 +2,9 @@
 
 #include <stdio.h>
 
-//we have declared enum globally
+//we have declared enum globally.  we can also declare it in local scope
 //as we have initialized first name, 
-//then all the uninitialized names are initialized by previous_name + 1. 
+//then all the uninitialized names were initialized by previous_name + 1. 
 enum week {monday=1, tuesday, wednesday, thursday, friday, saturday, sunday};
 
 /*enum year {january, february, march, thursday, may, june};*/

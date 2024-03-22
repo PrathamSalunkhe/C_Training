@@ -4,7 +4,7 @@
 
 struct bitfields
 {
-    char f1: 1,
+    unsigned char f1: 1,
                  res1: 1,
                  f2: 2,
                  res2: 1,
