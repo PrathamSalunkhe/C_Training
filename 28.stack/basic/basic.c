@@ -14,13 +14,16 @@ int top = -1;
 /// @param data 
 void push(int data)
 {
+    printf("before pushing %d into stack, top = %d\n", data, top);
     if(top == MAX-1)    //check whether the stack is full or not
     {
         printf("Stack Overflow.\n");
         return;
     }
     top = top + 1;
+    
     stack_arr[top] = data;
+    printf("after pushing %d into stack, top = %d\n", data, top);
 }
 
 /// @brief this function removes the elements from the stack
@@ -47,10 +50,11 @@ void print()
         printf("Stack Underflow\n");
         return ;
     }
-    printf("Remaining elements in stack are: ");
+    printf("Elements in stack are: \n");
+    printf("data position\n");
     for(i=top;i>=0;i--)
     {
-        printf("%d ", stack_arr[i]);
+        printf("%d     %d\n", stack_arr[i], i);
     }        
     printf("\n");                                                                                   
 }
@@ -63,12 +67,12 @@ int main()
     push(2);
     push(3);
     push(4);
-
-    //call the function to remove the elments from stack
+    push(5);
+    /*//call the function to remove the elments from stack
     data1 = pop();
     data2 = pop();
     printf("Deleted elements are: %d, %d\n", data1, data2);
-    
+    */
     //call the function to print the elements in the stack
     print();
     return 0;
