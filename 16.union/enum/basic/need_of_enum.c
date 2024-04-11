@@ -13,7 +13,7 @@ int main()
     enum Bool {False, True} var;    //here, this enum is not visible outside this main function 
     var = True; 
 
-    printf("%d\n", var);
+    printf("%d\n", var);  //true = 1
 
     return 0;
 }

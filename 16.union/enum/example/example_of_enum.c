@@ -13,6 +13,8 @@ enum week {monday=1, tuesday, wednesday, thursday, friday, saturday, sunday};
 
 int main()
 {
+    char *days[] = {"","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
+
     enum week day;  //here, we have declared variable 'day' of type enum week
     //enum year month;
     day = friday;   //name(containing integral constant) assign to variable
@@ -24,7 +26,7 @@ int main()
     // as initially the value of i is monday which is 1 and the value of sunday is 7. 
     for(i=monday; i<=sunday; i++)
     {
-        printf("%d ", i);
+        printf("%d %s\n", i, days[i]);
     }
     return 0;
 }
