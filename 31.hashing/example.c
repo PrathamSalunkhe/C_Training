@@ -1,80 +1,70 @@
-//this program is to check whether the brackets are valid or not
+//this program is to check the validity of the brackets
 
-#include<stdio.h>
+#include <stdio.h>
 #include <string.h>
 
 #define MAX 100
 
-int main()
-{
-    int i,j,k,l;
+int main() {
+    int i, s_count = 0, c_count = 0, r_count = 0;
     char p[MAX];
-    char s[MAX],c[MAX],r[MAX];
-    
+    char s[MAX] = {0}, c[MAX] = {0}, r[MAX] = {0};
+
     printf("Enter the brackets: ");
     scanf("%[^\n]s", p);
-    for(i=0;i<strlen(p);i++)
+
+    for (i = 0; i < strlen(p); i++) 
     {
-        // if(p[i]== '{' || p[i]== '(' || p[i]=='[')
-        // {
-            if(p[i]=='{')
+        //when you encounter a left bracket, put it into the array with increment the count
+        if (p[i] == '{')
+        {
+            c[c_count++] = p[i];
+        }
+        else if (p[i] == '(') 
+        {
+            r[r_count++] = p[i];
+        } 
+        else if (p[i] == '[') 
+        {
+            s[s_count++] = p[i];
+        }
+        else if (p[i] == '}')   //when you encounter the right bracket, decrement the count
+        {
+            c_count--;
+            if (c_count < 0) 
             {
-                c[i] = p[i];
+                printf("Brackets are not valid\n");
+                return 0;
             }
-            else if(p[i]=='(')
+        } 
+        else if (p[i] == ')') 
+        {
+            r_count--;
+            if (r_count < 0) 
             {
-                r[i] = p[i];
+                printf("Brackets are not valid\n");
+                return 0;
             }
-            else if(p[i]=='[')
+        } 
+        else if (p[i] == ']') 
+        {
+            s_count--;
+            if (s_count < 0) 
             {
-                s[i] = p[i];
+                printf("Brackets are not valid\n");
+                return 0;
             }
-        // }
-        // else if(p[i]='}' || p[i]== ')' || p[i]== ']')
-        // {
-            else if(p[i]=='}')
-            {
-                c[i] = p[i];
-            }
-            else if(p[i]==')')
-            {
-                r[i] = p[i];
-            }
-            else if(p[i]==']')
-            {
-                s[i] = p[i];
-            }
-        // }
+        }
     }
-    int count1 = 0;
-    for(j=0;j<strlen(s);j++)
-    {
-        printf("%c ", s[j]);
-        count1++;
-    }
-    int count2 = 0;
-    for(k=0;k<strlen(c);k++)
-    {
-        printf("%c ", c[k]);
-        count2++;
-    }
-    int count3 = 0;
-    for(l=0;l<strlen(r);l++)
-    {
-        printf("%c ", r[l]);
-        count3++;
-    }
-    printf("count1 = %d\n", count1);
-    printf("count2 = %d\n", count2);
-    printf("count3 = %d\n", count3);
-    //if(count1%2==0 && count2%2==0 && count3%2==0)
-    if(count1 == 2 && count2 == 3 && count3 == 2)
+    
+    if (s_count == 0 && c_count == 0 && r_count == 0) 
     {
         printf("Brackets are valid\n");
-    }
-    else
+    } 
+    else 
     {
         printf("Brackets are not valid\n");
     }
+
     return 0;
 }
