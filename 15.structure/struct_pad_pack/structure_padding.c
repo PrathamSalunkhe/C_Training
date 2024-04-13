@@ -4,9 +4,9 @@
 
 struct abc
 {
-    char a; //1 byte
-    int b;  //4 byte
-    char c; //1 byte    
+    int a; //4 byte
+    char b;  //1 byte
+    float c; //4 byte    
 };
 
 int main()

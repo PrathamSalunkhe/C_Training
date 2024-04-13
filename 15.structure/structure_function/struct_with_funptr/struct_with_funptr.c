@@ -1,6 +1,7 @@
 //this program is to understand the use of function pointers with structures
 
 #include <stdio.h>
+#include <stdlib.h>
 
 /// @brief defining a structure containing function pointers as a members
 struct calculator
@@ -57,6 +58,12 @@ int main()
     float result1;
     printf("Enter a choice: 1 for add, 2 for subtract, 3 for multiply, 4 for division: \n");
     scanf("%d", &choice);
+
+    if(choice > 4 || choice < 1)
+    {
+        printf("Invalid Choice\n");
+        exit(1);
+    }
 
     printf("Enter two numbers\n");
     scanf("%d %d", &a,&b);

@@ -15,7 +15,7 @@ struct abc
 int main()
 {
     struct abc s;
-    printf("%ld", sizeof(s));   //here sizeof s is 13 bytes because of structure packing
+    printf("%ld\n", sizeof(s));   //here sizeof s is 13 bytes because of structure packing
     return 0;
 
     /*we can avoid the wastage of memory by structure packing
