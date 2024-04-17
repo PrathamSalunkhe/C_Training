@@ -94,5 +94,7 @@ int main()
     default:
         break;
     }
+    
     printf("\n");
+    return 0;
 }
