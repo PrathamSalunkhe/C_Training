@@ -2,13 +2,16 @@
 
 #include <stdio.h>
 
-
+//defination of structure using typedef
 typedef struct example
 {
     char (*hello)(char);
     char (*bye)(char);
 }example;
 
+/// @brief this is fun 1
+/// @param a 
+/// @return returns r = t
 char fun1(char a)
 {
     char r = 't';
@@ -17,6 +20,9 @@ char fun1(char a)
     //printf("Hello, Welcome to C Programming\n");
 }
 
+/// @brief this is fun 2
+/// @param a 
+/// @return return r = T
 char fun2(char a)
 {
     char r = 'T';
@@ -27,15 +33,17 @@ char fun2(char a)
 
 int main()
 {
-    example call;
+    example call;   //structure variable
     char x, y;
 
+    //assigning address of functions to function pointer
     call.hello = fun1;
     call.bye = fun2;
     
     printf("Enter a character: ");
     scanf("%c", &x);
 
+    //calling t he function as per the condition
     if(x >= 'a' && x <= 'z')
     {
         y = call.hello(x);
@@ -45,6 +53,7 @@ int main()
         y = call.bye(x);
     }
 
+    //checking the return value
     if(y == 't')
     {
         printf("fun1 called, hello\n");
