@@ -1,3 +1,5 @@
+//this program is to understand the chaining method used in hashing 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
