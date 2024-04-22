@@ -1,6 +1,6 @@
- int fun(int a, int b)
+#include "file1.h"
+
+static int fun(int a, int b)
 {
-    int c;
-    c = a+b;
-    return c;
+    return a + b;
 }

@@ -10,7 +10,7 @@ int fun()   //function defined
 
 int main()
 {
-    for(fun();fun();fun())        //function calling init fun()=16
-        printf("%d ", fun());  //then it will decrement whenever called
-    return 0;
+    for(fun();fun();fun())      //function calling init fun()=16
+        printf("%d ", fun());   //then it will decrement whenever called
+    return 0;                   //O/P:- 14,11,8,5,2.
 }
