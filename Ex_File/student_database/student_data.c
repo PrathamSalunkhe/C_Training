@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "function.h"
 
+char c;
 
 // typedef struct student_data
 // {
@@ -16,7 +17,7 @@
 
 int main()
 {
-    int c;
+    //static char c;
     STUDENT_DETAILS *head = NULL;
 
     //the operation will run in infinite loop
@@ -35,45 +36,57 @@ int main()
         printf("\r\n*************************************************\r\n");
 
         printf("Enter your choice: ");
-        scanf("%d", &c);
-
-
+        //scanf("%c", &c);
+        c = getchar();
+        // if(c == '\n')
+        // {
+        //     c = '\0';
+        //     continue;
+        // }
+        while(getchar() != '\n');
+        //printf("0.the value of c is: %d\n", c);
+    
         //as per the choice, call the function
-        if(c >= 1 && c <= 5)
+        if(c >= '1' && c <= '5')
         {
+            //printf("1.the value of c is: %d\n", c);   
             switch (c)
             {
-            case 1:
-
+            case '1':
+                c = 0;
                 head = ADD_STUDENT_DETAILS(head);   //function to enter the details into the register
+                
                 break;
             
-            case 2:
+            case '2':
                 REMOVE_STUDENT_DETAILS(&head);   //function to remove the custom student details
                 break;
 
-            case 3:
+            case '3':
                 SEARCH_STUDENT_DETAILS(head);   //function to search the custom student detail
                 break;
 
-            case 4:
+            case '4':
                 PRINT_ALL_STUDENT_DETAILS(head);    //function to print all students details
                 break;
 
-            case 5:
+            case '5':
                 printf("Exiting...\n");     //exiting case
                 exit(1);
 
-            default:
+            /*efault:
                 printf("Invalid Choice\n");
-                break;
+                break;*/
             }
-            c=0;
+            //printf("2.the value of c is: %d\n", c);
+            c='\0';
         }
         else
         {
+            
+            //printf("the value of c is: %d\n", c);
             printf("Please enter a valid number in range\r\n");
-            c=0;
+            c='\0';
             break;
         }
     }

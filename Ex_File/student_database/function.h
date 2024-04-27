@@ -8,12 +8,12 @@ typedef struct student_data
     char name[30];
     char address[50];
     char mob_no[11];
-    int std_id;
+    char std_id[10];
     struct student_data *next;
 }STUDENT_DETAILS;
 
 
-STUDENT_DETAILS* createStudent(STUDENT_DETAILS *, char name[], char address[], char mob_no[], int std_id);
+STUDENT_DETAILS* createStudent(STUDENT_DETAILS *, char name[], char address[], char mob_no[], char std_id[]);
 STUDENT_DETAILS* ADD_STUDENT_DETAILS(STUDENT_DETAILS *);
 void REMOVE_STUDENT_DETAILS(STUDENT_DETAILS **);
 void SEARCH_STUDENT_DETAILS(STUDENT_DETAILS *);
