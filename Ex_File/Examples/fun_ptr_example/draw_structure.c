@@ -10,7 +10,7 @@ typedef struct draw_structure
     int (*square)();
     int (*rectangle)();
     int (*triangle)();
-}DRAW;
+}DRAW_t;
 
 
 //definations of all functions

@@ -3,13 +3,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct mathematics
+typedef struct 
 {
     int (*add)(int, int);
     int (*subtract)(int, int);
     int (*multiply)(int, int);
     float (*divide)(float, float);
-}MATHEMATICS;
+}MATHEMATICS_t;
 
 int ADDITION(int a, int b)
 {
@@ -33,7 +33,7 @@ float DIVISION(float a, float b)
 
 int main()
 {
-    MATHEMATICS maths;
+    MATHEMATICS_t maths;
     int a,b;
     int choice;
     int result;

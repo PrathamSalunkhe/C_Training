@@ -12,11 +12,12 @@ int main()
     int set_result, reset_result;
 
     printf("Enter the number: ");
-    scanf("%d", &a);
+    scanf("%x", &a);
 
     printf("Enter the bit position you want to set or reset: ");
     scanf("%d", &pos);
 
+    
     int choice;
     printf("Enter choice: \n");
     printf("1.Set\n");
