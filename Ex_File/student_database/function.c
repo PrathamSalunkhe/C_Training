@@ -91,10 +91,11 @@ STUDENT_DETAILS* ADD_STUDENT_DETAILS(STUDENT_DETAILS *head)
     
     //call this function to create the new student node, for entering into the register
     STUDENT_DETAILS *newStudent = createStudent(head, name, address, mob_no, std_id);
-
+    c = '\0';
     if (head == NULL)
     {
         head = newStudent;
+        printf("Student is successfully added\n");
     }
     else
     {
@@ -104,9 +105,9 @@ STUDENT_DETAILS* ADD_STUDENT_DETAILS(STUDENT_DETAILS *head)
             current = current->next;
         }
         current->next = newStudent;
+        printf("Student is successfully added\n");
     }
     //printf("B.value of c is: %d\n", c);
-    printf("Student is successfully added\n");
     return head;
 }
 
@@ -132,6 +133,7 @@ void REMOVE_STUDENT_DETAILS(STUDENT_DETAILS **head)
         *head = (*head)->next;  //push to second node
         free(temp);  //release memory from first(current) node
         temp = NULL; //assign NULL to it
+        printf("Student is successfully removed\n");
     }
     else
     {
@@ -152,8 +154,9 @@ void REMOVE_STUDENT_DETAILS(STUDENT_DETAILS **head)
 
         free(current);  //release the memory from hte current node
         current = NULL; //assign NULL to current node
+        printf("Student is successfully removed\n");
     }
-    printf("Student is successfully removed\n");
+    
 }
 
 /// @brief this function searches the custom student details from the register

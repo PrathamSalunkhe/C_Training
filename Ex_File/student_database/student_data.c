@@ -24,7 +24,8 @@ int main()
     while (1)
     {
         //ask user to enter choice for which task it want to perform
-
+        do
+        {
         printf("\r\n*************************************************\r\n");
         //printf("Operations for the student details register\n");
         printf("Menu\n");
@@ -34,16 +35,17 @@ int main()
         printf("4.print all the details in register\n");
         printf("5.Exit\n");
         printf("\r\n*************************************************\r\n");
-
+        
         printf("Enter your choice: ");
-        //scanf("%c", &c);
-        c = getchar();
-        // if(c == '\n')
-        // {
-        //     c = '\0';
-        //     continue;
-        // }
-        while(getchar() != '\n');
+        scanf("%c", &c);
+        //c = getchar();
+
+        if(c==32 || (c>=65 && c<=90) || (c>=97 && c<=122) || (c>=54 && c<=57) || c==0)
+        {
+            printf("Please give valid input\n");
+            exit(1);
+        }
+
         //printf("0.the value of c is: %d\n", c);
     
         //as per the choice, call the function
@@ -53,28 +55,30 @@ int main()
             switch (c)
             {
             case '1':
-                c = 0;
                 head = ADD_STUDENT_DETAILS(head);   //function to enter the details into the register
-                
+                c = '\0';
                 break;
             
             case '2':
                 REMOVE_STUDENT_DETAILS(&head);   //function to remove the custom student details
+                c = '\0';
                 break;
 
             case '3':
                 SEARCH_STUDENT_DETAILS(head);   //function to search the custom student detail
+                c = '\0';
                 break;
 
             case '4':
                 PRINT_ALL_STUDENT_DETAILS(head);    //function to print all students details
+                c = '\0';
                 break;
 
             case '5':
                 printf("Exiting...\n");     //exiting case
                 exit(1);
 
-            /*efault:
+            /*default:
                 printf("Invalid Choice\n");
                 break;*/
             }
@@ -85,10 +89,17 @@ int main()
         {
             
             //printf("the value of c is: %d\n", c);
-            printf("Please enter a valid number in range\r\n");
+            printf("Please give valid input\r\n");
             c='\0';
-            break;
+            exit(1);
+        }
+        }while(getchar() != '\n');
+
+        if(c==32 || (c>=65 && c<=90) || (c>=97 && c<=122) || (c>=54 && c<=57) || c==0)
+        {
+            printf("Please give valid input\n");
+            exit(1);
         }
     }
-    
+
 }

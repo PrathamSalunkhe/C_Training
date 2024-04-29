@@ -2,9 +2,18 @@
 
 int main()
 {
-    char f;
-    printf("Enter the value");
-    scanf("%c", &f);
+    char ch;
+    int i;
+    char word[100];
 
-    printf("Value of f is: %d\n", f);
+    printf("ENter characters, end with enter: ");
+    while (1)
+    {
+        ch = getchar();
+        word[i] = ch;
+        if(ch == '\n')
+            break;
+        i++;
+    }
+    printf("The word is: %s\n", word);  
 }
