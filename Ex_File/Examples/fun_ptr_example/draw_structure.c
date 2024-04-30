@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 //declaring function pointers into the structure
-typedef struct draw_structure
+typedef struct 
 {
     int (*circle)();
     int (*square)();
@@ -42,7 +42,7 @@ int DRAW_TRIANGLE()
 
 int main()
 {
-    DRAW draw;
+    DRAW_t draw;
     int c;
 
     //ask user to enter the choice

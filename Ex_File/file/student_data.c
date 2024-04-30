@@ -5,6 +5,7 @@
 #include "function.h"
 
 char c;
+FILE *fptr = NULL;
 
 // typedef struct student_data
 // {
@@ -19,6 +20,7 @@ int main()
 {
     //static char c;
     STUDENT_DETAILS *head = NULL;
+    
 
     //the operation will run in infinite loop
     while (1)
@@ -47,7 +49,13 @@ int main()
         }
 
         //printf("0.the value of c is: %d\n", c);
-    
+        fptr = fopen("student_details.txt", "rb");
+
+        if(fptr == NULL)
+        {
+            printf("Error, can't open the file\n");
+            exit(1);
+        }
         //as per the choice, call the function
         if(c >= '1' && c <= '5')
         {
@@ -102,5 +110,5 @@ int main()
             exit(1);
         }
     }
-
+    fclose(fptr);
 }
